@@ -13,7 +13,6 @@ func create_server() -> void:
 		func(pid):
 			print("Peer " + str(pid) + " has joined")
 	)
-	
 
 func join_server() -> void:
 	peer.create_client("localhost", 42069)

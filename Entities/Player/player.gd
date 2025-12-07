@@ -20,9 +20,15 @@ var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var hitpoints: int = max_hitpoints
 
 func _ready() -> void:
+	print("Player " + str(name) + "ready, authority: " + str(is_multiplayer_authority()))
 	if !is_multiplayer_authority():
+		$SubViewportContainer.visible = false
+		$UI.visible = false
+		$ScreenEffectController.visible = false
 		return
-	print("rdy" + str(name))
+	
+	print("Setting up authority Player " + str(name))
+
 	# Connect to InputManager signals
 	Input_Manager.mouse_look.connect(_on_mouse_look)
 	Input_Manager.menu_toggle_requested.connect(_on_pause_toggle)
@@ -63,7 +69,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _enter_tree() -> void:
-	print("tree" + str(name))
+	print("tree " + str(name))
 	set_multiplayer_authority(int(str(name)))
 
 func handle_camera_rotation() -> void:
