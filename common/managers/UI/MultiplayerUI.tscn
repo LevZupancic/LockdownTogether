@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq1j32uwespx0"]
+
+[ext_resource type="Script" uid="uid://djiwpnkpph0uu" path="res://common/managers/UI/multiplayer_ui.gd" id="1_wuqf1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w7lfd"]
+font_size = 124
+
+[node name="MultiplayerUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wuqf1")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Multiplayer"
+label_settings = SubResource("LabelSettings_w7lfd")
+horizontal_alignment = 1
+
+[node name="HostButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Host
+"
+
+[node name="JoinButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Join
+"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/JoinButton" to="." method="_on_join_button_pressed"]
