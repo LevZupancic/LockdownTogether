@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 const PLAYER: PackedScene = preload("res://Entities/Player/player.tscn")
 @onready var multiplayer_ui: Control = %MultiplayerUi

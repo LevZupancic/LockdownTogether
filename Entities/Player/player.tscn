@@ -1,11 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://buw71tpnt0squ"]
+[gd_scene load_steps=18 format=3 uid="uid://buw71tpnt0squ"]
 
 [ext_resource type="Script" uid="uid://jxj2no3hiagn" path="res://Entities/Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://chs7kldpl3trg" path="res://Entities/Player/smooth_camera.gd" id="2_4ntmi"]
 [ext_resource type="Script" uid="uid://d272hj7ob0a5v" path="res://Entities/Player/crosshair.gd" id="3_btcbx"]
 [ext_resource type="Texture2D" uid="uid://djdj1blhj2y4w" path="res://Assets/Textures/Bloody Screen Effects/Effect_5.png" id="5_k53q1"]
 [ext_resource type="Texture2D" uid="uid://bt6xibajff0ms" path="res://Assets/Textures/Bloody Screen Effects/Blood_Blur_2.png" id="6_fhl08"]
-[ext_resource type="PackedScene" uid="uid://cf4o2nrxyqcrl" path="res://common/managers/InputManager/InputManager.tscn" id="7_01a4e"]
 [ext_resource type="PackedScene" uid="uid://enmfonarff1q" path="res://Entities/Player/game_over_menu.tscn" id="7_vtle1"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hvfyp"]
@@ -159,7 +158,7 @@ stretch = true
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1920, 1080)
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="WeaponCamera" type="Camera3D" parent="SubViewportContainer/SubViewport"]
@@ -241,5 +240,3 @@ mouse_filter = 2
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_4wf4l")
-
-[node name="InputManager" parent="." instance=ExtResource("7_01a4e")]

@@ -1,27 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq1j32uwespx0"]
+[gd_scene load_steps=6 format=3 uid="uid://cq1j32uwespx0"]
 
 [ext_resource type="Script" uid="uid://djiwpnkpph0uu" path="res://common/managers/UI/multiplayer_ui.gd" id="1_wuqf1"]
+[ext_resource type="Shader" uid="uid://bruvbiqia6hb5" path="res://Entities/Player/game_over_menu.tres" id="2_h753h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h753h"]
+shader = ExtResource("2_h753h")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_j1o7m"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w7lfd"]
 font_size = 124
 
 [node name="MultiplayerUi" type="Control"]
 layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = -2.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_wuqf1")
+
+[node name="BackgroundBlur" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_h753h")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_wuqf1")
+texture = SubResource("PlaceholderTexture2D_j1o7m")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1939.0
-offset_bottom = 1203.0
+anchors_preset = -1
+anchor_left = 0.202
+anchor_top = 0.31500003
+anchor_right = 0.79800004
+anchor_bottom = 0.5
+offset_left = 0.29599
+offset_top = -0.120010376
+offset_right = -0.2960205
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 

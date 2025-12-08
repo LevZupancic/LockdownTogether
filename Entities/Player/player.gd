@@ -2,12 +2,12 @@ class_name Player extends CharacterBody3D
 
 
 const SPEED: float = 5.0
+const Tag: String = "Player"
 
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var damage_animation: AnimationPlayer = $ScreenEffectController/DamageTexture/DamageAnimation
 @onready var hit_animation: AnimationPlayer = $ScreenEffectController/HitTexture/HitAnimation
 @onready var game_over_menu: GameOverMenu = $GameOverMenu
-@onready var Input_Manager: InputManager = $InputManager
 
 @export var jump_height: float = 1.0
 @export var max_hitpoints: int = 100
@@ -27,8 +27,6 @@ func _ready() -> void:
 		$ScreenEffectController.visible = false
 		return
 	
-	print("Setting up authority Player " + str(name))
-
 	# Connect to InputManager signals
 	Input_Manager.mouse_look.connect(_on_mouse_look)
 	Input_Manager.menu_toggle_requested.connect(_on_pause_toggle)
@@ -69,7 +67,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _enter_tree() -> void:
-	print("tree " + str(name))
 	set_multiplayer_authority(int(str(name)))
 
 func handle_camera_rotation() -> void:
@@ -97,7 +94,8 @@ func take_damage(damage: int) -> void:
 
 
 func handle_death() -> void:
-	print("died")
+	print("Player " + str(multiplayer.get_unique_id()) + " died")
+	Signal_Manager.emit_game_state_changed(CommonType.GameState.DEAD)
 	Input_Manager.enter_menu()
 	game_over_menu.game_over()
 

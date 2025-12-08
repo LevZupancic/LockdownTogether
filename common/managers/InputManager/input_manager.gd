@@ -6,7 +6,7 @@ enum InputState {
 }
 
 ## Signals
-# Player
+# Player movement
 signal mouse_look(delta: Vector2)
 signal sprint_started()
 signal sprint_stopped()

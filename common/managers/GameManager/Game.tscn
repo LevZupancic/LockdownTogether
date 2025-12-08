@@ -20,12 +20,8 @@ sky = SubResource("Sky_aqvws")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node"]
 script = ExtResource("1_jqv3d")
-
-[node name="MultiplayerUi" parent="." instance=ExtResource("3_g81jm")]
-unique_name_in_owner = true
-metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ujmcl")
@@ -192,3 +188,10 @@ material = ExtResource("6_sm1y3")
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://buw71tpnt0squ")
 spawn_path = NodePath("..")
+
+[node name="MultiplayerUi" parent="." instance=ExtResource("3_g81jm")]
+unique_name_in_owner = true
+anchors_preset = 15
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
