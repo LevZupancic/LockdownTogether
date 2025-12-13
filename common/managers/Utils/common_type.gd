@@ -7,3 +7,9 @@ enum GameState {
 	DEAD,
 	PAUSED,
 }
+
+enum SceneAction {
+	HIDE,
+	STOP,
+	DELETE,
+}

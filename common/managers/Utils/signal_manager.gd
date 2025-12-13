@@ -2,6 +2,8 @@ class_name SignalManager
 extends Node
 
 ## Signals
+
+#
 signal game_state_changed(gameState: Common_Type.GameState)
 
 

@@ -16,10 +16,11 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
+Signal_Manager="*res://common/managers/Utils/signal_manager.gd"
+Common_Type="*res://common/managers/Utils/common_type.gd"
 Connection_Manager="*res://common/managers/ConnectionManager/connection_manager.gd"
 Input_Manager="*res://common/managers/InputManager/input_manager.gd"
-Common_Type="*res://common/managers/Utils/common_type.gd"
-Signal_Manager="*res://common/managers/Utils/signal_manager.gd"
+Scene_Manager="*res://common/managers/SceneManager/scene_manager.gd"
 
 [debug]
 

@@ -1,0 +1,41 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bqd8kq5mas0oj"]
+
+[ext_resource type="FontFile" uid="uid://beo3hajnho5yb" path="res://Assets/Fonts/Rubic/Rubik-Medium.ttf" id="1_73pyk"]
+[ext_resource type="FontFile" uid="uid://caoh0n0aqymku" path="res://Assets/Fonts/Rubic/Rubik-Bold.ttf" id="1_gsv8m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac5lc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gsv8m"]
+content_margin_left = 80.0
+content_margin_top = 10.0
+content_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73pyk"]
+content_margin_left = 25.0
+content_margin_top = 50.0
+content_margin_right = 25.0
+content_margin_bottom = 50.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wka8"]
+bg_color = Color(0.57264364, 0.5910241, 0.71885926, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exk6d"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+default_font = ExtResource("1_73pyk")
+default_font_size = 0
+Button/colors/font_color = Color(1, 1, 0.9764706, 1)
+Button/colors/icon_hover_color = Color(0.4627451, 0.5372549, 0.87058824, 1)
+Button/font_sizes/font_size = 22
+Button/styles/normal = SubResource("StyleBoxFlat_ac5lc")
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_gsv8m")
+Label/styles/normal = SubResource("StyleBoxEmpty_gsv8m")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_73pyk")
+VBoxContainer/constants/separation = 8
+customButtonType/base_type = &"Button"
+customButtonType/styles/hover = SubResource("StyleBoxFlat_1wka8")
+customButtonType/styles/normal = SubResource("StyleBoxFlat_exk6d")
