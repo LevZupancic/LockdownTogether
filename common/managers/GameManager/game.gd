@@ -1,10 +1,11 @@
 extends Node
 
 const PLAYER: PackedScene = preload("res://Entities/Player/player.tscn")
-@onready var multiplayer_ui: Control = %MultiplayerUi
+@onready var ui: Control = %UI
 
 func _ready() -> void:
-	multiplayer_ui.instantiate_player.connect(add_player)
+	Scene_Manager.ui = ui
+	Signal_Manager.emit_change_ui_scene(Common_Type.scene_dict["Main menu"])
 
 func add_player(pid: int) -> void:
 	var player = PLAYER.instantiate()

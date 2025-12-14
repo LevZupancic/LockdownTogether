@@ -9,6 +9,10 @@ var current_3d_scene: Node3D
 var current_2d_scene: Node2D
 var current_ui_scene: Control
 
+func _ready() -> void:
+	Signal_Manager.change_ui_scene.connect(change_ui_scene)
+	Signal_Manager.quit_game.connect(quit_game)
+
 func change_ui_scene(new_scene: String, action: Common_Type.SceneAction) -> void:
 	# handle current scene
 	if current_ui_scene != null:
@@ -23,3 +27,6 @@ func change_ui_scene(new_scene: String, action: Common_Type.SceneAction) -> void
 		var new = load(new_scene).instantiate()
 		ui.add_child(new)
 		current_ui_scene = new
+
+func quit_game() -> void:
+	get_tree().quit()

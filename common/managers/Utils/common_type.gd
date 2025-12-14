@@ -13,3 +13,9 @@ enum SceneAction {
 	STOP,
 	DELETE,
 }
+
+
+## Scenes
+var scene_dict = {
+	"Main menu": "res://common/managers/UI/MainMenu.tscn",
+}

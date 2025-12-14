@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlodk2ha8m6g8"]
+[gd_scene load_steps=6 format=3 uid="uid://dlodk2ha8m6g8"]
 
+[ext_resource type="Script" uid="uid://iqfbtjxh8iua" path="res://common/managers/UI/main_menu.gd" id="1_icn14"]
 [ext_resource type="Shader" uid="uid://bruvbiqia6hb5" path="res://Entities/Player/game_over_menu.tres" id="1_umfo5"]
 [ext_resource type="Theme" uid="uid://bqd8kq5mas0oj" path="res://common/managers/UI/resources/MainMenuTheme.tres" id="2_umfo5"]
 
@@ -15,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_icn14")
 
 [node name="BackgroundBlur" type="TextureRect" parent="."]
 material = SubResource("ShaderMaterial_icn14")
@@ -31,6 +33,7 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.282
 anchor_bottom = 1.0
+offset_left = 50.0
 offset_top = 100.0
 offset_right = -0.22399902
 offset_bottom = -100.0
@@ -69,3 +72,8 @@ text = "Settings"
 layout_mode = 2
 text = "Quit
 "
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/hostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/joinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
